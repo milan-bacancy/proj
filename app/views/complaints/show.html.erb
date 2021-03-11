@@ -1,0 +1,18 @@
+<p>
+  <strong>Title:</strong>
+  <%= @complaint.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @complaint.desc %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @complaint.status %>
+</p>
+
+<%= link_to 'Edit', edit_complaint_path(@complaint) %> |
+<%= link_to 'Back', complaints_path %>
+<%= link_to 'Delete complaint', complaint_path(@complaint), method: :delete, data: { confirm: "Are you sure?" } %>

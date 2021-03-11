@@ -1,0 +1,46 @@
+<h1 style="color:green" align="center"> Complaint Managemant System </h1>
+
+<h1 class="text-info"> Admins Page </h1>
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
+</p>
+
+<h2 class="text-info"> All Complaints </h2>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead class="thead-dark">
+   <tr>
+    <th rowspan="2">User</th>
+    <th colspan="6">Complaint Details</th>
+  </tr>
+  <tr>
+    <th> Title </th>
+    <th> Desc </th>
+    <th> Status </th>
+    <th> Show </th>
+    <th> Edit </th>
+    <th> Destroy </th>
+  </tr>
+</thead>
+
+<tbody class="tbody-bordered">
+  <% @users.each do |user| %>
+  <tr>
+    <td rowspan="<%= user.complaints.count+1%>", text-align= "top"><%= user.email %></td>
+    <% user.complaints.each do |complaint| %>
+    <tr>
+      <td><%= complaint.title %></td>
+      <td><%= complaint.desc %></td>
+      <td><%= complaint.status %></td>
+      <td><%= link_to 'Show', complaint_path(complaint) %></td>
+      <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
+      <td><%= link_to 'Destroy',complaint_path(complaint),method: :delete,data: { confirm: 'Are you sure?'} %></td> 
+    </tr>
+    <% end %>
+  </tr>
+  <%end%>
+</tbody>
+</table>
+
+<%= link_to "logout", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %>

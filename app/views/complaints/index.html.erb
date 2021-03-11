@@ -1,0 +1,45 @@
+<h1 align= "center"> Complaint Management System </h1><br><br>
+<h1> User Page </h1>
+<br>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
+</p>
+
+<%= link_to 'Logout', destroy_user_session_path, method: :delete,data: { confirm: "Are you sure? "} %> |
+<%= link_to 'Destroy user', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
+<br>
+<h2>Complaints</h2>
+
+<% if @complaints.count == 0 %>
+<%= "No Complaints" %> 
+<% else %>
+<table class="table table-striped table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Title</th>
+      <th>Desc</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @complaints.each do |complaint| %>
+      <tr>
+        <td><%= complaint.title %></td>
+        <td><%= complaint.desc %></td>
+        <td><%= complaint.status %></td>
+        <td><%= link_to 'Show', complaint %></td>
+        <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
+        <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+<br>
+<br><br>
+<%= link_to 'New Complaint', new_complaint_path %>
