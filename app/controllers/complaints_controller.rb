@@ -1,5 +1,6 @@
 class ComplaintsController < ApplicationController
-  before_action :set_complaint, only: %i[ show edit update destroy ]
+  before_action :set_complaint, only: %i[ show edit update destroy ], if: Proc.new{ current_user.role== "user" }
+  before_action :admin_call,only: %i[show edit update destroy], if: Proc.new{ current_user.role== "admin" }
 
   # GET /complaints or /complaints.json
   def index
@@ -65,5 +66,9 @@ class ComplaintsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def complaint_params
       params.require(:complaint).permit(:title, :desc, :status)
+    end
+
+    def admin_call
+      @complaint = Complaint.find(params[:id])
     end
 end

@@ -1,20 +1,9 @@
-<h1 align= "center"> Complaint Management System </h1><br><br>
-<h1> User Page </h1>
-<br>
+<h1 class="text-center text-info"> User Page </h1>
 
-<p>
-  <strong>Email:</strong>
-  <%= current_user.email %>
-</p>
-
-<%= link_to 'Logout', destroy_user_session_path, method: :delete,data: { confirm: "Are you sure? "} %> |
-<%= link_to 'Destroy user', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-<br>
-<br>
-<h2>Complaints</h2>
+<h2 class="text-info mt-4 ml-5">My Complaints</h2>
 
 <% if @complaints.count == 0 %>
-<%= "No Complaints" %> 
+<a class="text-warning ml-5"><%= "No Complaints Left here" %> </a> 
 <% else %>
 <table class="table table-striped table-bordered">
   <thead class="thead-dark">
@@ -40,6 +29,3 @@
   </tbody>
 </table>
 <% end %>
-<br>
-<br><br>
-<%= link_to 'New Complaint', new_complaint_path %>

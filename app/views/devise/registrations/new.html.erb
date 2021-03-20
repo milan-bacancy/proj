@@ -1,34 +1,77 @@
-<h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <br>
+  <h2 class="sign-up text-center">Sign up</h2>
+  <br>
+
   <%= render "devise/shared/error_messages", resource: resource %>
+  
+  <div class="row">
+    <div class="field col-md-3 offset-3">
+      <%= f.text_field :fname,class:"form-control", autofocus: true, autocomplete: "fname",placeholder: "First Name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="field col-md-3">
+      <%= f.text_field :lname,class:"form-control", autofocus: true, autocomplete: "lname",placeholder: "Last Name" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+
+
+  <div class="row">
+    <div class="field col-md-6 mt-3 offset-3">
+      <%= f.email_field :email,class:"form-control", autofocus: true, autocomplete: "email",placeholder: "Email Id" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+
+  
+  <div class="row">
+    <div class="form-check col-md-3 offset-3">
+      <%= f.label :gender,class:"form-check-label mt-3" %><br>
+      <%= f.radio_button :gender, "male",class:"form-check-input ml-1" %>
+      <%= f.label :male, "Male",class:"form-check-label ml-4" %>
+      <%= f.radio_button :gender, "female",class:"form-check-input ml-4" %>
+      <%= f.label :female, "Female",class:"form-check-label ml-5" %>
+    </div>
+
+    <div class="field col-md-3 mt-4">
+      <%= f.text_field :contact, class:"form-control", autofocus: true, autocomplete: "contact", placeholder:"Contact" %>
+    </div>
   </div>
 
-  <div class="select">
-    <%= f.label :role %><br />
-    <%= f.select :role, [:user, :admin], autocomplete: "role" %>
+
+
+  <div class="row">
+    <div class="form-check col-md-3 offset-3">
+      <%= f.label :role,class:"form-check-label mt-3" %><br>
+      <%= f.radio_button :role, "user",class:"form-check-input ml-1" %>
+      <%= f.label :user, "User",class:"form-check-label ml-4" %>
+      <%= f.radio_button :gender, "admin",class:"form-check-input ml-4" %>
+      <%= f.label :admin, "Admin",class:"form-check-label ml-5" %>
+    </div>
+
+    <div class="field col-md-3 mt-4">
+      <%= f.text_field :address,class:"form-control", autofocus: true, autocomplete: "address", placeholder:"Address" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+
+  <div class="row">
+    <div class="field col-md-3 mt-3 offset-3">
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Password" %>
+    </div>
+
+    <div class="field col-md-3 mt-3">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Confirm password" %>
+    </div>
   </div>
+  
+  <br />
+  <div class="actions offset-5 col-md-2">
+    <%= f.submit "Sign up",class:"form-control bg-primary text-white"  %>
+  </div>
+
+  <br>
+  <h6 class="offset-5 text-black">Already have account? <%= render "devise/shared/links" %></h6>
+
 <% end %>
-
-<%= render "devise/shared/links" %>

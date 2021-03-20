@@ -1,18 +1,24 @@
-<p>
+<div class="h2 ml-5 mt-5 text-info">
+	Complaint Details
+</div>
+
+<p class="h5 ml-5 mt-4">
   <strong>Title:</strong>
   <%= @complaint.title %>
 </p>
 
-<p>
+<p class="h5 ml-5">
   <strong>Desc:</strong>
   <%= @complaint.desc %>
 </p>
 
-<p>
+<p class="h5 ml-5">
   <strong>Status:</strong>
   <%= @complaint.status %>
 </p>
 
-<%= link_to 'Edit', edit_complaint_path(@complaint) %> |
-<%= link_to 'Back', complaints_path %>
-<%= link_to 'Delete complaint', complaint_path(@complaint), method: :delete, data: { confirm: "Are you sure?" } %>
+<div class="h5 ml-5 mt-4">
+  <%= link_to 'Edit', edit_complaint_path(@complaint) %> |
+  <%= link_to 'Back', complaints_path %> |
+  <%= link_to 'Delete complaint', complaint_path(@complaint), method: :delete, data: { confirm: "Are you sure?" } %>
+</div>

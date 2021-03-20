@@ -11,22 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="field ml-5 mt-4 col-md-2">
+    <%= form.label :title, class: "h5 text-muted" %>
+    <%= form.text_field :title, class:"form-control", autofocus: true, autocomplete: "title" %>
   </div>
 
-  <div class="field">
-    <%= form.label :desc %>
-    <%= form.text_field :desc %>
+  <div class="field ml-5 mt-4 col-md-2">
+    <%= form.label :desc, class: "h5 text-muted" %>
+    <%= form.text_area :desc, class:"form-control", autofocus: true, autocomplete: "desc" %>
   </div>
 
-  <div class="select">
-    <%= form.label :status %>
-    <%= form.select :status, [:ongoing, :resolved] %>
+  <div class="actions mt-4 ml-5 col-md-3 d-flex">
+    <%= form.submit class:"btn col-md-5 btn-primary text-white form-control" %>
+    <%= link_to 'Back', complaints_path, class: "btn ml-3 col-md-2 btn-secondary form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
 <% end %>

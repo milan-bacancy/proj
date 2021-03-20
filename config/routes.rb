@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-
   root 'home#index'
 
   resources :complaints

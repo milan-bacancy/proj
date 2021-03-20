@@ -1,3 +1,11 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.bg-img {
+    background-image: url('comp.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 1600px 800px;
+
+}
