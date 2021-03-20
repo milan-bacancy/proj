@@ -14,8 +14,14 @@ class AdminsController < ApplicationController
 
 	def update
 		@complaint = Complaint.find(params[:id])
-		@complaint.status = "resolved"
-		if @complaint.update(status: "resolved")
+		if @complaint.status == "ongoing"
+			arg = "resolved"
+			@complaint.status = "resolved"
+		else
+			arg = "ongoing"
+			@complaint.status = "ongoing"
+		end
+		if @complaint.update(status: arg)
 			redirect_to admins_path
 		else
 			@complaint.errors.full_messages

@@ -1,38 +1,46 @@
 <h1 class="text-info text-center"> Admins Page </h1>
 
-<h2 class="text-info"> All User Complaints </h2>
+<h2 class="text-info ml-5"> All User Complaints </h2>
 
-<table class="table table-bordered table-striped table-hover">
-  <thead class="thead-dark">
-   <tr>
-    <th rowspan="2">User</th>
-    <th colspan="6">Complaint Details</th>
-  </tr>
-  <tr>
-    <th> Title </th>
-    <th> Desc </th>
-    <th> Status </th>
-    <th> Show </th>
-    <th> Edit </th>
-    <th> Destroy </th>
-  </tr>
-</thead>
-
-<tbody class="tbody-bordered">
-  <% @users.each do |user| %>
-  <tr>
-    <td rowspan="<%= user.complaints.count+1%>", text-align= "top"><%= user.email %></td>
-    <% user.complaints.each do |complaint| %>
+<% if Complaint.count == 0 %>
+  <h4 class="text-warning mt-4 ml-5"> No User Complaints Left. </h4>
+<% else %>
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
     <tr>
-      <td><%= complaint.title %></td>
-      <td><%= complaint.desc %></td>
-      <td><%= complaint.status %></td>
-      <td><%= link_to 'Show', complaint_path(complaint) %></td>
-      <td><%= link_to 'Resolve', admin_path(complaint), method: :put,data: { confirm: 'Are you sure?'} %></td>
-      <td><%= link_to 'Destroy',admin_path(complaint), method: :delete,data: { confirm: 'Are you sure?'} %></td> 
+      <th rowspan="2">User</th>
+      <th colspan="6">Complaint Details</th>
     </tr>
-    <% end %>
-  </tr>
-  <%end%>
-</tbody>
-</table>
+    <tr>
+      <th> Title </th>
+      <th> Desc </th>
+      <th> Status </th>
+      <th> Show </th>
+      <th> Edit </th>
+      <th> Destroy </th>
+    </tr>
+  </thead>
+
+  <tbody class="tbody-bordered">
+    <% @users.each do |user| %>
+    <tr>
+      <td rowspan="<%= user.complaints.count+1%>", text-align= "top"><%= user.email %></td>
+      <% user.complaints.each do |complaint| %>
+      <tr>
+        <td><%= complaint.title %></td>
+        <td><%= complaint.desc %></td>
+        <td><%= complaint.status %></td>
+        <td><%= link_to 'Show', complaint_path(complaint) %></td>
+        <% if complaint.status == "ongoing" %>
+          <td><%= link_to 'Resolve', admin_path(complaint), method: :put,data: { confirm: 'Are you sure?'} %></td>
+        <% else %>
+          <td><%= link_to 'Reopen', admin_path(complaint), method: :put,data: { confirm: 'Are you sure?'} %></td>
+        <% end %>
+        <td><%= link_to 'Destroy',admin_path(complaint), method: :delete,data: { confirm: 'Are you sure?'} %></td> 
+      </tr>
+      <% end %>
+    </tr>
+    <%end%>
+  </tbody>
+  </table>
+<% end %>

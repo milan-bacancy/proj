@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_085019) do
   create_table "complaints", force: :cascade do |t|
     t.string "title"
     t.string "desc"
-    t.integer "status"
+    t.integer "status", default: 0
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
