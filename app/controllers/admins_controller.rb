@@ -9,9 +9,6 @@ class AdminsController < ApplicationController
 		@complaint = Complaint.find(params[:id])
 	end
 
-	def edit
-	end
-
 	def update
 		@complaint = Complaint.find(params[:id])
 		if @complaint.status == "ongoing"

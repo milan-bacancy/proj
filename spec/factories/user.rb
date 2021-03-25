@@ -6,7 +6,7 @@ FactoryBot.define do
       email { Faker::Internet.email }
       contact { Faker::PhoneNumber.phone_number }
       address { Faker::Address.city }
-      role { "user" }
-      gender { Faker::Gender.binary_type.downcase }     
+      gender { Faker::Gender.binary_type.downcase }   
+      role { User.role }
     end
   end
