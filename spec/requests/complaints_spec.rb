@@ -5,7 +5,8 @@ RSpec.describe "Complaints", type: :request do
   let(:complaint) { create(:complaint) }
 
   before do
-    login_as (user) 
+    login_as (user)
+    user.role = 'user'
   end
 
   describe 'GET #new' do
@@ -72,7 +73,7 @@ RSpec.describe "Complaints", type: :request do
         expect(complaint.reload)
       end
 
-      it 'redirects to the index page' do
+      it 'redirects to the show page' do
         complaint.user = user
         complaint.save
         put "/complaints/#{complaint.id}", params: { id: complaint.id, complaint: new_attributes }

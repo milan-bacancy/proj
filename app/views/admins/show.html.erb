@@ -1,0 +1,22 @@
+<div class="h2 ml-5 mt-5 text-info">
+	Complaint Details
+</div>
+
+<p class="h5 ml-5 mt-4">
+  <strong>Title:</strong>
+  <%= @complaint.title %>
+</p>
+
+<p class="h5 ml-5">
+  <strong>Desc:</strong>
+  <%= @complaint.desc %>
+</p>
+
+<p class="h5 ml-5">
+  <strong>Status:</strong>
+  <%= @complaint.status %>
+</p>
+
+<div class="h5 ml-5 mt-4">
+  <%= link_to 'Back', admins_path %>
+</div>

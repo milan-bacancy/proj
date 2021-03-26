@@ -10,7 +10,7 @@ class User < ApplicationRecord
     record.errors.add(attr, 'must start with upper case') if value =~ /\A[[:lower:]]/
   end
   validates :address, presence: true
-  validates :contact, presence:true, numericality: true
+  validates :contact, presence:true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

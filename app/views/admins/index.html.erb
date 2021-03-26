@@ -30,7 +30,7 @@
         <td><%= complaint.title %></td>
         <td><%= complaint.desc %></td>
         <td><%= complaint.status %></td>
-        <td><%= link_to 'Show', complaint_path(complaint) %></td>
+        <td><%= link_to 'Show', admin_path(complaint) %></td>
         <% if complaint.status == "ongoing" %>
           <td><%= link_to 'Resolve', admin_path(complaint), method: :put,data: { confirm: 'Are you sure?'} %></td>
         <% else %>
