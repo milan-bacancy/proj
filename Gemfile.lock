@@ -114,6 +114,7 @@ GEM
     nokogiri (1.11.1-x64-mingw32)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.2.3-x64-mingw32)
     public_suffix (4.0.6)
     puma (4.3.7)
       nio4r (~> 2.0)
@@ -202,7 +203,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -246,6 +246,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   jbuilder (~> 2.7)
+  pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.5)
   rails-controller-testing
@@ -253,7 +254,6 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   simplecov (= 0.21.2)
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
