@@ -1,8 +1,8 @@
-x = rand(0..1)
-y= 'user'
-if x == 1
-  y = 'admin'
-end
+# x = rand(0..1)
+# @y= 'user'
+# if @x == 1
+#   @y = 'admin'
+# end
 
 FactoryBot.define do
     factory :user do
@@ -13,6 +13,6 @@ FactoryBot.define do
       contact { Faker::PhoneNumber.phone_number }
       address { Faker::Address.city }
       gender { Faker::Gender.binary_type.downcase }   
-      role { y }
+      role { 'admin' }
     end
   end
