@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
 	def index
-		@users = User.where(role: "user")
+		@users = User.with_role(:user)
 		@complaints = Complaint.all
 	end
 
