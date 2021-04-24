@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
 
 	has_many :complaints, dependent: :destroy
 	enum role: [:user, :admin]
@@ -11,6 +12,7 @@ class User < ApplicationRecord
   end
   validates :address, presence: true
   validates :contact, presence:true
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -614,6 +614,20 @@
           null
         ]
       },
+      "D:/Rails/project/config/initializers/rolify.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "D:/Rails/project/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
@@ -646,10 +660,10 @@
       },
       "D:/Rails/project/spec/factories/user.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          0,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           1,
@@ -683,6 +697,7 @@
       "D:/Rails/project/app/models/user.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
           1,
@@ -695,6 +710,7 @@
           null,
           1,
           1,
+          null,
           null,
           null,
           1,
@@ -747,6 +763,33 @@
           null,
           1,
           1,
+          1,
+          null
+        ]
+      },
+      "D:/Rails/project/spec/models/role_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "D:/Rails/project/app/models/role.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
           1,
           null
         ]
@@ -822,14 +865,14 @@
           1,
           1,
           1,
-          1,
+          0,
           null,
           null,
           1,
           1,
           1,
           1,
-          1,
+          0,
           null,
           null,
           null,
@@ -841,12 +884,12 @@
           null,
           null,
           1,
-          1,
-          1,
+          0,
+          0,
           null,
           null,
           1,
-          1,
+          0,
           null,
           null,
           null,
@@ -1041,19 +1084,19 @@
           null,
           1,
           4,
-          4,
-          4,
+          0,
+          0,
           null,
           0,
           null,
-          4,
-          4,
+          0,
+          0,
           null,
           null,
           1,
           2,
-          2,
-          2,
+          0,
+          0,
           null,
           null
         ]
@@ -1134,6 +1177,6 @@
         ]
       }
     },
-    "timestamp": 1616757066
+    "timestamp": 1617276596
   }
 }
